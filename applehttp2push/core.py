@@ -84,12 +84,3 @@ class AppleHttp2Push:
     @staticmethod
     def doc():
         print("具体请参考：https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html#//apple_ref/doc/uid/TP40008194-CH11-SW1")
-
-# bundle_id = 'com.heavengifts.vaffle'
-# cert_name = 'ck_beta.pem'
-# cert_password = "123456"
-# token = '2a6a0918a1a08042a592e05fe2a6ab880ca6f47f0f531e5e5ff222045889e352'
-# str = "test1"
-# apns = AppleHttp2Push(cert_name, bundle_id, cert_password)
-# apns.single_push(token, str)
-# apns.doc()
