@@ -60,7 +60,7 @@ class AppleHttp2Push:
             token = token[1:-1]
         return token.replace(" ", '')
 
-    def single_push(self, token, alert, badge=1):
+    def push(self, token, alert, badge=1):
         """
             发送单个设备
             :param token:设备
@@ -84,3 +84,4 @@ class AppleHttp2Push:
     @staticmethod
     def doc():
         print("具体请参考：https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html#//apple_ref/doc/uid/TP40008194-CH11-SW1")
+
