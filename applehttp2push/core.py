@@ -13,11 +13,11 @@ import json
 
 
 class AppleHttp2Push:
-    def __init__(self, cert, apns_topic, cert_password):
+    def __init__(self, cert, apns_topic, cert_password, is_production_server = False):
         self.cert = cert
         self.cert_password = cert_password
         self.headers = {"apns-topic": apns_topic}
-        self.api_url = 'api.development.push.apple.com:443'
+        self.api_url = 'api.push.apple.com:443' if is_production_server else 'api.development.push.apple.com:443'
         self.api_path = '/3/device/%s'
 
     def get_api_path(self, token):
