@@ -14,6 +14,6 @@ pip install applehttp2push
 from applehttp2push import AppleHttp2Push
 
 apns = AppleHttp2Push('证书路径', 'bundle ID', '证书密码', '是否生产环境')
-res = apns.push('苹果设备token', "推送内容")
+res = apns.push('苹果设备token', "推送内容标题", "推送内容")
 
 ```

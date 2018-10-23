@@ -60,20 +60,26 @@ class AppleHttp2Push:
             token = token[1:-1]
         return token.replace(" ", '')
 
-    def push(self, token, alert, badge=1):
+    def push(self, token, alert_title='', alert_body='', badge=1, sound='default'):
         """
             发送单个设备
             :param token:设备
-            :param alert:弹出的消息
+            :param alert_title:弹出的消息title加粗
+            :param alert_body:弹出的消息title加粗
             :param badge:红点数字
+            :param sound:声音
             :return:
             """
         token = self.handle_token(token)
         payload = {
             'aps': {
-                'alert': alert,
-                'sound': 'default',
+                'alert': {
+                    'title': alert_title,
+                    'body': alert_body,
+                },
+                'sound': sound,
                 'badge': badge,
+                'content-available':1
             }
         }
         conn = HTTPConnection(self.api_url, ssl_context=tls.init_context(cert=self.cert, cert_password=self.cert_password))
