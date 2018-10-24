@@ -73,13 +73,12 @@ class AppleHttp2Push:
         token = self.handle_token(token)
         payload = {
             'aps': {
-                'alert': {
-                    'title': alert_title,
-                    'body': alert_body,
-                },
+                'alert': alert_title,
+                'body': alert_body,
+                'content-available':1,
                 'sound': sound,
                 'badge': badge,
-                'content-available':1
+
             }
         }
         conn = HTTPConnection(self.api_url, ssl_context=tls.init_context(cert=self.cert, cert_password=self.cert_password))
